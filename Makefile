@@ -17,8 +17,8 @@ clean:
 
 # Byg og push image til ghcr.io
 push:
-	docker build -t ghcr.io/ulpe-ek-dk/intelligent-iot-flask-api:latest .
-	docker push ghcr.io/ulpe-ek-dk/intelligent-iot-flask-api:latest
+	docker build -t ghcr.io/lula0002/intelligent-iot-flask-api-main:latest .
+	docker push ghcr.io/lula0002/intelligent-iot-flask-api-main:latest
 
 # Deploy til remote maskine / Azure VM
 remote-up:

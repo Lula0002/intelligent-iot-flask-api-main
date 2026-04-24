@@ -8,6 +8,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
+    ports:
+      - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
       - ./mysql-init:/docker-entrypoint-initdb.d
@@ -19,7 +21,7 @@ services:
       start_period: 30s
 
   api:
-    image: ${IMAGE_NAME}:${IMAGE_TAG:-latest}
+    build: .
     container_name: ${COMPOSE_PROJECT_NAME:-iot}_api
     restart: always
     environment:
